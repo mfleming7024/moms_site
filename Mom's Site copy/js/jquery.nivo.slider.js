@@ -118,61 +118,7 @@
         if(!settings.manualAdvance && kids.length > 1){
             timer = setInterval(function(){ nivoRun(slider, kids, settings, false); }, settings.pauseTime);
         }
-        
-        // Add Direction nav
-		
-		/*
-        if(settings.directionNav){
-            slider.append('<div class="nivo-directionNav"><a class="nivo-prevNav">'+ settings.prevText +'</a><a class="nivo-nextNav">'+ settings.nextText +'</a></div>');
-            
-            $('a.nivo-prevNav', slider).live('click', function(){
-                if(vars.running) { return false; }
-                clearInterval(timer);
-                timer = '';
-                vars.currentSlide -= 2;
-                nivoRun(slider, kids, settings, 'prev');
-            });
-            
-            $('a.nivo-nextNav', slider).live('click', function(){
-                if(vars.running) { return false; }
-                clearInterval(timer);
-                timer = '';
-                nivoRun(slider, kids, settings, 'next');
-            });
-			
-        }
-		*/
-        
-        // Add Control nav
-        if(settings.controlNav){
-            vars.controlNavEl = $('<div class="nivo-controlNav"></div>');
-            slider.after(vars.controlNavEl);
-            for(var i = 0; i < kids.length; i++){
-                if(settings.controlNavThumbs){
-                    vars.controlNavEl.addClass('nivo-thumbs-enabled');
-                    var child = kids.eq(i);
-                    if(!child.is('img')){
-                        child = child.find('img:first');
-                    }
-                    if(child.attr('data-thumb')) vars.controlNavEl.append('<a class="nivo-control" rel="'+ i +'"><img src="../'+ child.attr('data-thumb') +'" alt="" /></a>');
-                } else {
-                    vars.controlNavEl.append('<a class="nivo-control" rel="'+ i +'">'+ (i + 1) +'</a>');
-                }
-            }
-
-            //Set initial active link
-            $('a:eq('+ vars.currentSlide +')', vars.controlNavEl).addClass('active');
-            
-            $('a', vars.controlNavEl).bind('click', function(){
-                if(vars.running) return false;
-                if($(this).hasClass('active')) return false;
-                clearInterval(timer);
-                timer = '';
-                sliderImg.attr('src', vars.currentImage.attr('src'));
-                vars.currentSlide = $(this).attr('rel') - 1;
-                nivoRun(slider, kids, settings, 'control');
-            });
-        }
+       
         
         //For pauseOnHover setting
         if(settings.pauseOnHover){
@@ -337,9 +283,6 @@
                 $('a:eq('+ vars.currentSlide +')', vars.controlNavEl).addClass('active');
             }
             
-            // Process caption
-            processCaption(settings);            
-            
             // Remove any slices from last transition
             $('.nivo-slice', slider).remove();
             
@@ -349,26 +292,9 @@
             var currentEffect = settings.effect,
                 anims = '';
                 
-            // Generate random effect
-            if(settings.effect === 'random'){
-                anims = new Array('sliceDownRight','sliceDownLeft','sliceUpRight','sliceUpLeft','sliceUpDown','sliceUpDownLeft','fold','fade',
-                'boxRandom','boxRain','boxRainReverse','boxRainGrow','boxRainGrowReverse');
-                currentEffect = anims[Math.floor(Math.random()*(anims.length + 1))];
-                if(currentEffect === undefined) { currentEffect = 'fade'; }
-            }
+           
             
-            // Run random effect from specified set (eg: effect:'fold,fade')
-            if(settings.effect.indexOf(',') !== -1){
-                anims = settings.effect.split(',');
-                currentEffect = anims[Math.floor(Math.random()*(anims.length))];
-                if(currentEffect === undefined) { currentEffect = 'fade'; }
-            }
-            
-            // Custom transition as defined by "data-transition" attribute
-            if(vars.currentImage.attr('data-transition')){
-                currentEffect = vars.currentImage.attr('data-transition');
-            }
-        
+           
             // Run effects
             vars.running = true;
             var timeBuff = 0,
