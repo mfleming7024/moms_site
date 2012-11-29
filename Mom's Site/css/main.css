@@ -1,0 +1,202 @@
+@charset "UTF-8";
+/* CSS Document */
+									/*Basic HTML*/
+* {
+	font-family: Arial, Helvetica, sans-serif;	
+}
+
+html {
+	background-image: url("../images/bg-gradient.png");	
+	background-repeat: repeat-x;
+	background-attachment: fixed;
+	background-color: #FFF;
+}
+
+body {
+	margin: 0 auto;
+	width: 970px;
+	background-color: white;
+	border: 10px solid #000;
+}
+
+									/*Structure*/
+#left-column {
+	clear: both;
+	float: left;
+	width: 470px;	
+}
+
+#right-column {
+	float: right;
+	width: 480px;	
+}
+
+									/*Header*/
+
+h1 {
+	float: left;
+	width: 350px;
+	padding-left: 10px;
+	line-height: 32px;
+	font-family: "Boopee-Bold";
+	font-size: 61px;
+}
+
+									/*Navigation*/
+									
+#nav {
+	list-style-type: none;
+	float: left;
+	width: 600px;
+	background: yellow;
+	padding-left: 0;
+}
+
+#nav li {
+	float: left;
+	width: 150px;
+	height: 75px;
+	text-indent: -999999px;
+}
+
+#nav li a {
+	background-image: url("../images/navbar.png");	
+	text-decoration: none;	
+	display: block;
+	height: 75px;
+	width: 150px;
+}
+
+#nav li.home a:hover {
+	background-position: -0px -75px;	
+}
+
+#nav li.home a:active {
+	background-position: 0px -150px;	
+}
+
+						/*About Button*/
+						
+#nav .about a {
+	background-position: -150px 0px;
+}
+
+#nav .about a:hover {
+	background-position: -150px -75px;
+}
+
+#nav .about a:active {
+	background-position: -150px -150px;
+}
+
+
+						/*Gallery Button*/
+#nav .gallery a {
+	background-position: -300px 0px;
+}
+
+#nav .gallery a:hover {
+	background-position: -300px -75px;
+}
+
+#nav .gallery a:active {
+	background-position: -300px -150px;
+}
+
+						/*Create Button*/
+#nav .create a {
+	background-position: -450px 0px;
+}
+
+#nav .create a:hover {
+	background-position: -450px -75px;
+}
+
+#nav .create a:active {
+	background-position: -450px -150px;
+}
+
+									/*Content*/
+									
+
+ul#left {
+	float: left;
+	padding-left: 15px;
+	width: 220px;
+}
+
+ul#right {
+	float: right;
+	padding: 0px;
+	width: 220px;	
+}
+
+
+#left-column p {
+	text-align: justify;
+	font-size: 14px;	
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#left-column p img {
+	float: left;
+	width: auto;
+	padding-right: 12px;
+}
+
+#right-column ul li {
+	padding-bottom: 5px;	
+}
+
+h2, h3 {
+	text-align: center;
+	display: block;
+	width: 100%;
+	border-bottom: 1px solid black;	
+}
+
+h3 {
+	padding-top: 7px;
+	text-align: left;
+}
+
+#prices {
+	border: 10px solid black;	
+	width: 300px;
+	margin: 0 auto;
+}
+
+#prices td,tr,th {
+	border: 1px solid maroon;
+	padding: 5px;
+	text-align: center;
+}
+
+td {
+	color: #FFF;
+}
+
+th {
+	background-color: #98811e;
+	color: #000;	
+	font-size: 20px;
+}
+
+.odd {
+	background-color: #98811e;	
+}
+
+.even {
+	background-color: #660000;	
+}
+
+									/*Footer*/
+
+footer {
+	padding-top: 10px;
+	clear: both;
+	text-align:center;
+	font-size: 13px;
+	border-top: 1px solid black;
+}
