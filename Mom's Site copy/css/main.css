@@ -2,14 +2,9 @@
 /*====================*/
 /*=== Reset Styles ===*/
 /*====================*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+html, body, div, span, h1, h2, h3, h4, h5, h6, p,
+a, font, img, dl, dt, dd, ol, ul, li, table, tbody,
+tfoot, thead, tr, th, td {
   margin: 0;
   padding: 0;
   border: 0;
@@ -47,33 +42,45 @@ aside, nav, article, figure {
 
 /* Mix ins */
 /* Body Styles */
-* {
-  font-family: Arial, Helvetica, sans-serif; }
-
 html {
   background-image: url("../images/norwegian_rose_@2X.png");
-  background-repeat: repeat-both; }
+  background-repeat: repeat-both;
+  font-family: Arial, Helvetica, sans-serif; }
 
 body {
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
   background-color: white;
   -webkit-box-shadow: 0px 0px 20px #323232;
   -moz-box-shadow: 0px 0px 20px #323232;
   box-shadow: 0px 0px 20px #323232; }
 
 header {
+  float: left;
   width: 100%;
-  height: auto;
+  background: #fff;
   -webkit-box-shadow: 0px 0px 20px #323232;
   -moz-box-shadow: 0px 0px 20px #323232;
-  box-shadow: 0px 0px 20px #323232; }
-  header img {
-    width: 100%; }
+  box-shadow: 0px 0px 20px #323232;
+  border: 1px solid #000; }
+  header .big {
+    font-size: 54px;
+    font-weight: 400;
+    color: #900;
+    text-shadow: 1px 2px #666; }
+  header h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    font-size: 46px;
+    letter-spacing: -3px;
+    float: left;
+    width: 47%;
+    padding: 1% 0 1% 3%; }
 
 h3 {
-  font: 19px 'Mystery Quest', cursive;
-  font-weight: bolder;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
   letter-spacing: 2px;
   text-align: center;
   width: 70%;
@@ -123,22 +130,24 @@ footer {
 /*Slider Styles*/
 .slider {
   background-color: #000;
-  border: 5px solid #000;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-  height: 320px;
+  -moz-box-shadow: 0 0 15px 3px #000;
+  -webkit-box-shadow: 0 0 15px 3px #000;
+  box-shadow: 0 0 15px 3px #000;
+  height: 460px;
   width: 680px;
   margin: 20px auto 20px auto;
   overflow: visible;
   position: relative; }
 
 .sliderbg {
+  clear: both;
   background-image: url(../images/pattern_149.gif);
   border: 5px double #000; }
 
 /* IMAGE LIST */
 #mask {
   overflow: hidden;
-  height: 320px; }
+  height: 460px; }
   #mask ul {
     margin: 0;
     padding: 0;
@@ -146,7 +155,7 @@ footer {
     #mask ul li {
       width: 680px;
       /* Width Image */
-      height: 320px;
+      height: 460px;
       /* Height Image */
       position: absolute;
       top: -325px;
@@ -155,7 +164,7 @@ footer {
       #mask ul li img {
         width: 680px;
         /* Width Image */
-        height: 320px;
+        height: 460px;
         /* Height Image */ }
 
 /* ANIMATION */
